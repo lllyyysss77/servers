@@ -1,0 +1,363 @@
+# Instincts generated from https://github.com/lllyyysss77/servers
+# Generated: 2026-05-12T18:53:32.069Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: servers-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Commit Length
+
+## Action
+
+Keep commit messages concise (~48 characters)
+
+## Evidence
+
+- Average commit message length: 48 chars
+- Based on 3 commits
+
+---
+id: servers-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: servers-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: servers-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: servers-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: servers-workflow-upgrade-dependencies-across-packages
+trigger: "when doing upgrade dependencies across packages"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/servers
+---
+
+# Servers Workflow Upgrade Dependencies Across Packages
+
+## Action
+
+Follow the upgrade-dependencies-across-packages workflow:
+1. Update dependency version in each affected package.json (e.g., src/everything/package.json, src/filesystem/package.json, etc.)
+2. Update package-lock.json to reflect new dependency versions
+3. Update code files if necessary to accommodate breaking changes or new APIs from the upgraded dependency
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package-lock.json, src/*/package.json, src/everything/tools/*.ts
+
+---
+id: servers-instinct-camelCase-files
+trigger: "When creating a new file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct CamelCase Files
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Observed in src/everything/tools/*.ts
+
+---
+id: servers-instinct-camelCase-functions
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct CamelCase Functions
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: servers-instinct-pascalCase-classes
+trigger: "When declaring a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct PascalCase Classes
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: servers-instinct-screaming-constants
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Screaming Constants
+
+## Action
+
+Name the constant in SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: servers-instinct-relative-imports
+trigger: "When importing modules within the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle
+- Seen in src/everything/tools/*.ts
+
+---
+id: servers-instinct-named-exports
+trigger: "When exporting functions, classes, or constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Named Exports
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle
+
+---
+id: servers-instinct-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Try Catch Errors
+
+## Action
+
+Wrap error-prone code in try-catch blocks
+
+## Evidence
+
+- Pattern in errorHandling.style
+
+---
+id: servers-instinct-no-custom-errors
+trigger: "When creating error handling logic"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct No Custom Errors
+
+## Action
+
+Avoid defining custom error classes; use built-in Error
+
+## Evidence
+
+- Pattern in errorHandling.customErrorClasses
+
+---
+id: servers-instinct-separate-tests
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Separate Tests
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.testLocation
+
+---
+id: servers-instinct-commit-freeform
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Commit Freeform
+
+## Action
+
+Use a freeform message without a strict prefix, typically describing the change and affected package or dependency
+
+## Evidence
+
+- Seen in commit: 'upgrade everything-server to zod v4, latest MCP sdk'
+- Seen in commit: 'bump packages to 1.29.0 SDK'
+- Pattern in commits.type
+
+---
+id: servers-instinct-commit-merge-pr
+trigger: "When merging a pull request"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Commit Merge Pr
+
+## Action
+
+Use the default merge commit message format ('Merge pull request #... from ...')
+
+## Evidence
+
+- Seen in commit: 'Merge pull request #4136 from KKonstantinov/feature/upgrade-zod-v4'
+
+---
+id: servers-instinct-upgrade-deps-workflow
+trigger: "When a shared dependency needs to be upgraded across multiple server packages"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/servers
+---
+
+# Servers Instinct Upgrade Deps Workflow
+
+## Action
+
+Update each affected package.json, update package-lock.json, and update code for breaking changes if needed
+
+## Evidence
+
+- Workflow: upgrade-dependencies-across-packages
+- Seen in commits: 'upgrade everything-server to zod v4, latest MCP sdk', 'bump packages to 1.29.0 SDK'
+
